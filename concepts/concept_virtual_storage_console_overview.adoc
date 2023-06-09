@@ -1,0 +1,74 @@
+---
+permalink: concepts/concept_virtual_storage_console_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: 'I tool ONTAP per VMware vSphere offrono una gestione end-to-end del ciclo di vita delle macchine virtuali in ambienti VMware che utilizzano sistemi storage NetApp. Semplifica lo storage e la gestione dei dati per gli ambienti VMware consentendo agli amministratori di gestire lo storage direttamente all"interno di vCenter Server.' 
+---
+= Panoramica sui tool ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I tool ONTAP per VMware vSphere offrono una gestione end-to-end del ciclo di vita delle macchine virtuali in ambienti VMware che utilizzano sistemi storage NetApp. Semplifica lo storage e la gestione dei dati per gli ambienti VMware consentendo agli amministratori di gestire lo storage direttamente all'interno di vCenter Server.
+
+Con vSphere 6.5, VMware ha introdotto un nuovo client basato su HTML5 chiamato vSphere Client. Le versioni 9.6 e successive dei tool ONTAP supportano solo il client vSphere. Gli strumenti ONTAP si integrano con il client vSphere e consentono di utilizzare i servizi SSO (Single Sign-on). In un ambiente con più istanze di vCenter Server, ogni istanza di vCenter Server che si desidera gestire deve avere la propria istanza registrata di VSC.
+
+Ogni componente degli strumenti ONTAP offre funzionalità che consentono di gestire lo storage in modo più efficiente.
+
+
+
+== Virtual Storage Console (VSC)
+
+VSC consente di eseguire le seguenti attività:
+
+* Aggiunta di controller di storage, assegnazione di credenziali e impostazione delle autorizzazioni per i controller di storage di VSC, che possono essere sfruttate sia da SRA che dal provider VASA
+* Eseguire il provisioning degli archivi dati
+* Monitorare le performance dei datastore e delle macchine virtuali nell'ambiente vCenter Server
+* Controllare l'accesso degli amministratori agli oggetti vCenter Server utilizzando RBAC (role-based access control) a due livelli:
++
+** Oggetti vSphere, come macchine virtuali e datastore
++
+Questi oggetti vengono gestiti utilizzando vCenter Server RBAC.
+
+** Storage ONTAP
++
+I sistemi storage vengono gestiti utilizzando ONTAP RBAC.
+
+
+
+* Visualizzare e aggiornare le impostazioni host degli host ESXi connessi allo storage NetApp
+
+
+Le operazioni di provisioning VSC traggono vantaggio dall'utilizzo del plug-in NFS per le API vStorage VMware per l'integrazione array (VAAI). Il plug-in NFS per VAAI è una libreria software che integra le librerie di dischi virtuali VMware installate sull'host ESXi. Il pacchetto VMware VAAI consente l'offload di determinate attività dagli host fisici all'array di storage. È possibile eseguire attività come il thin provisioning e l'accelerazione hardware a livello di array per ridurre il carico di lavoro sugli host ESXi. La funzione di offload delle copie e di riserva dello spazio migliorano le prestazioni delle operazioni VSC.
+
+Il plug-in NetApp NFS per VAAI non viene fornito con VSC. Tuttavia, è possibile scaricare il pacchetto di installazione del plug-in e ottenere le istruzioni per l'installazione del plug-in dal NetApp Support Site.
+
+
+
+== Provider VASA
+
+IL provider VASA per ONTAP utilizza le API VMware vSphere per la consapevolezza dello storage (VASA) per inviare informazioni sullo storage utilizzato da VMware vSphere al server vCenter. I tool ONTAP hanno un provider VASA integrato con VSC. IL provider VASA consente di eseguire le seguenti attività:
+
+* Provisioning di datastore vVol (VMware Virtual Volumes)
+* Creare e utilizzare profili di funzionalità storage che definiscono diversi obiettivi di livello di servizio dello storage (SLO) per il proprio ambiente
+* Verificare la conformità tra i datastore e i profili di funzionalità dello storage
+* Impostare gli allarmi per avvisare l'utente quando volumi e aggregati stanno raggiungendo i limiti di soglia
+* Monitorare le performance dei dischi delle macchine virtuali (VMDK) e delle macchine virtuali create negli archivi dati vVols
+
+
+Se si utilizza ONTAP 9.6 o versioni precedenti, il provider VASA comunica con il server vCenter utilizzando le API VASA e comunica con ONTAP utilizzando le API NetApp denominate ZAPI. Per visualizzare la dashboard vVol per ONTAP 9.6 e versioni precedenti, è necessario aver installato e registrato i servizi API di OnCommand con il server vCenter. Se si utilizza ONTAP 9.7 e versioni successive, non è necessario che i servizi API di OnCommand siano registrati presso il provider VASA per visualizzare la dashboard vVol.
+
+
+NOTE: Per ONTAP 9.6 e versioni precedenti, il provider VASA richiede un'istanza dedicata dei servizi API di OnCommand. Un'istanza dei servizi API di OnCommand non può essere condivisa con più istanze del provider VASA.
+
+
+
+== Storage Replication Adapter (SRA)
+
+Quando SRA viene attivato e utilizzato insieme a VMware Site Recovery Manager (SRM), è possibile ripristinare i datastore e le macchine virtuali di vCenter Server in caso di guasto. SRA consente di utilizzare la replica basata su array (ABR) per siti protetti e siti di ripristino per il disaster recovery in caso di guasto.
+
+*Informazioni correlate*
+
+https://mysupport.netapp.com/site/global/dashboard["Supporto NetApp"]

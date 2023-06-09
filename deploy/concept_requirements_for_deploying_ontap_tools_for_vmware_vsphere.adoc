@@ -1,0 +1,14 @@
+---
+permalink: deploy/concept_requirements_for_deploying_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Prima di implementare gli strumenti ONTAP, è necessario conoscere i requisiti di implementazione e decidere quali attività eseguire. In base alle tue attività, puoi scegliere il modello di implementazione per l"implementazione degli strumenti ONTAP' 
+---
+= Requisiti per l'implementazione degli strumenti ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di implementare gli strumenti ONTAP, è necessario conoscere i requisiti di implementazione e decidere quali attività eseguire. In base alle tue attività, puoi scegliere il modello di implementazione per l'implementazione degli strumenti ONTAP
