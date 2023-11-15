@@ -578,7 +578,6 @@ rm -rf com.netapp.vsch5-x.x.x.xxxx
   <block id="3d7de81ead511dc0d2bd3eeb864ff231" category="paragraph">Se si desidera che VSC ridimensioni il volume contenente quando ridimensiona il datastore VMFS, non utilizzare l'opzione *Use existing volume* (Usa volume esistente) nella sezione Storage Attributes (attributi di storage) durante il provisioning iniziale del datastore VMFS, ma lasciare che crei automaticamente un nuovo volume per ciascun datastore.</block>
   <block id="b6b2c55f92e8e04471c740483e69a795" category="paragraph">È possibile aumentare o ridurre le dimensioni di un datastore NFS, ma per un datastore VMFS è possibile solo aumentarle. Il ridimensionamento del datastore è supportato anche per gli archivi dati FlexGroup con opzione di crescita e riduzione automatica. Un FlexGroup che fa parte di un datastore tradizionale e di un volume FlexVol che fa parte di un datastore vVols non può ridursi al di sotto delle dimensioni esistenti ma può crescere al massimo del 120%. Gli snapshot predefiniti sono attivati su questi volumi FlexGroup e FlexVol.</block>
   <block id="0e6fc56cbe91d72cb03e33a904ae9ab3" category="list-text">Nel riquadro di navigazione, selezionare il data center che contiene il datastore.</block>
-  <block id="a15d1bf5dee929fddbf2e03ae0f830e9" category="list-text">Fare clic con il pulsante destro del mouse sull'archivio dati e selezionare *NetApp ONTAP Tools* &gt; *Assegna QoS*.</block>
   <block id="425e99780c82b74f333dd7da3068f492" category="list-text">Nella finestra di dialogo Ridimensiona, specificare una nuova dimensione per l'archivio dati, quindi fare clic su *OK*.</block>
   <block id="29b33d6a4971ded7e90ffb22fa8e685d" category="paragraph">È possibile eseguire l'opzione *RISCOPRI TUTTO* nel menu Storage Systems (sistemi storage) per aggiornare manualmente l'elenco di storage in Storage Systems and Dashboard (sistemi storage e dashboard) o attendere il successivo aggiornamento pianificato.</block>
   <block id="96175e97c8c13423e6a60249fa770130" category="summary">È possibile monitorare i datastore tradizionali e le macchine virtuali utilizzando la dashboard tradizionale degli strumenti ONTAP. I dati del dashboard consentono di analizzare l'utilizzo del datastore e di intraprendere azioni correttive per evitare che le macchine virtuali vengano eseguite in vincoli di spazio.</block>
@@ -1892,7 +1891,6 @@ Viene visualizzato un messaggio di conferma dell'avvenuta memorizzazione delle c
   <block id="4c3c39a603eb21106d2df2836d4b456c" category="sidebar">Knowledge base di NetApp - Tool ONTAP</block>
   <block id="bbf1057ad175e1e1664e224351019ac9" category="sidebar">NetApp Import Utility - Video</block>
   <block id="72393f9ef0b6b69526a30ac7ce5276bc" category="sidebar">Community NetApp - Tool ONTAP</block>
-  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">Strumenti ONTAP per VMware vSphere</block>
   <block id="4226794a7bb33ab0a2309e30c07c9031" category="sidebar">Gestire gli strumenti ONTAP</block>
   <block id="1b8a04f09ff55290753a17988fd53c2a" category="sidebar">Gestire i datastore</block>
   <block id="427d9ce60f4b39aa82a25138b4aa489f" category="sidebar">Gestire le macchine virtuali</block>
@@ -1931,4 +1929,5 @@ Viene visualizzato un messaggio di conferma dell'avvenuta memorizzazione delle c
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">Fare clic con il pulsante destro del mouse sull'archivio dati e selezionare *NetApp ONTAP tools* &gt; *Ridimensiona archivio dati non vVol*.</block>
 </blocks>
